@@ -1,0 +1,11 @@
+.sliding-nav-area {
+    color: white;
+    overflow: hidden;
+    display: grid;
+    background: #344757;
+
+    .sliding-nav-pane {
+        overflow: hidden;
+        display: grid;
+    }
+}

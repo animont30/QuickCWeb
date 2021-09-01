@@ -1,0 +1,83 @@
+html {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  top: 0;
+  height: 100vh;
+}
+
+body {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  top: 0;
+  height: 100vh;
+
+  display: grid;
+
+  background: #344757;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 7em;
+
+  .app-main-area {
+    display: grid;
+    overflow: hidden;
+    grid-template-rows: 100%;
+  }
+
+  .app-footer {
+    display: grid;
+  }
+
+  > div {
+  }
+}
+
+.icon-spin {
+  -webkit-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

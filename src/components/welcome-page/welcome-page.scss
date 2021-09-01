@@ -1,0 +1,135 @@
+@mixin slide-up-fade-in-delayed($waitTime) {
+    animation: wait #{$waitTime},
+    slide-up 1.0s ease-out #{$waitTime} forwards,
+    fade-in 2s ease-out #{$waitTime} forwards;
+}
+
+.safe101-page-welcome {
+
+    .safe101-welcome-title {
+        padding-top:20px;
+        text-align: center;
+        margin: 20px 0;
+        margin-bottom: 5px;
+        font-size: 2.0em;
+        font-weight: bold;
+        white-space: nowrap;
+
+        >div {
+            display: inline-block;
+        }
+
+        .rotate-fade-right {
+            animation: rotate-fade-right-keyframes 3.0s cubic-bezier(0, 0, 0, 1);
+            transform-origin: 20% 200%;
+        }
+
+        .rotate-fade-left {
+            animation: rotate-fade-left-keyframes 1.0s cubic-bezier(0, 0, 0, 1);
+            transform-origin: 40% 600%;
+        }
+    }
+
+    .safe101-welcome-subtitle {
+        text-align: center;
+        margin: 20px 0;
+        margin-top: 0;
+        font-size: 1.25em;
+        font-weight: bold;
+        opacity: 0;
+        @include slide-up-fade-in-delayed(0.9s);
+    }
+
+    .login-button-fade-in {
+        opacity: 0;
+        @include slide-up-fade-in-delayed(2.0s);
+    }
+
+    .image-fly-in {
+        opacity: 0;
+        animation: image-fly-in-keyframes 2.5s cubic-bezier(0, 0, 0, 1) 1.5s forwards;
+    }
+
+}
+
+.animation-fade-in {
+    animation: fade-in 2.5s ease-out;
+}
+
+.animation-slide-up {
+    animation: slide-up 2.5s ease-out;
+}
+
+.animation-slide-up-fade-in {
+    animation: slide-up 1.0s ease-out, fade-in 2s ease-out;
+
+}
+
+
+
+@keyframes image-fly-in-keyframes {
+    0% {
+        transform: translate3d(100px, 0, 500px) rotate3d(1, 1, 1, 90deg);
+
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 30px)
+    }
+
+    100% {
+        transform: translate(0, 0)
+    }
+}
+
+
+
+@keyframes rotate-fade-right-keyframes {
+    0% {
+        transform: rotate(-45deg);
+
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+
+
+
+@keyframes rotate-fade-left-keyframes {
+    0% {
+        transform: rotate(45deg);
+
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}

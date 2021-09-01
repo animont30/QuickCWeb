@@ -1,0 +1,19 @@
+@mixin safe101-form-item {
+    background: #3f6ca8;
+    color: white;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 0.25em rgba(0, 0, 0, 0.8);
+
+  
+    &.safe101-style-navigate-forward {
+        background: #01a509;
+    }
+
+    &.safe101-style-navigate-backward {
+        background: #bd0000;
+    }
+    &.safe101-style-menu {
+        background: #c66800;
+    }
+}

@@ -1,0 +1,47 @@
+@import "../../styles/mixins.scss";
+
+.safe101-navigation-footer {
+    background: #2d3d4b;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0.25em;
+    padding: 0.25em;
+
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: transform 200ms ease-out;
+
+    .safe101-footer-button {
+        height: 79px;
+        display: grid;
+        background: #3f6ca8;
+        color: white;
+
+        align-items: center;
+        justify-items: center;
+        border: none;
+
+        transition: opacity 200ms ease-out;
+        @include safe101-form-item();
+
+        > div {
+            color: white;
+        }
+
+        &.safe101-enabled {
+            opacity: 1;
+        }
+
+        &.safe101-disabled {
+            display: none;
+        }
+    }
+}
+
+.safe101-safe-area {
+    padding-bottom: 2em;
+}
+
+.footer-multi {
+    grid-template-columns: 1fr 1fr;
+}
