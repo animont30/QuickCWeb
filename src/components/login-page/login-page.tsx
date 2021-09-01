@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { pubSubService } from '../../pubsub';
 import { FormGroup } from '../form-controls/form-group';
 import { FormInput, FormInputRef } from '../form-controls/form-input';
+import { NavigationFooter } from '../navigation-footer/navigation-footer';
 import { FormButton } from '../form-controls/form-button';
 import './login-page.scss';
 import { FaBackward, FaArrowRight, FaSpinner, FaCheck, FaInfoCircle, FaDivide } from 'react-icons/fa';
@@ -27,12 +28,12 @@ interface LoginErrors {
 
 
 export const LoginPage = (args: {}) => {
-  
+
   const [loginState, setLoginState] = useState(LoginState.None);
 
   const [errors, setErrors] = useState({} as Partial<LoginErrors>);
 
-  const LoginClick = () => {    
+  const LoginClick = () => {
 
     let loginValues = {
       safeName: formData.safeName,
@@ -70,20 +71,20 @@ export const LoginPage = (args: {}) => {
     setTimeout(() => {
       updateRotations();
     }, 1);
-    const loadusers = async (key:any) => {
-    
+    const loadusers = async (key: any) => {
+
       // const result = await axios.post("https://safe101.com.au/safe101-demo/api/loginApi/validate", {
       //   data:{
-  
+
       //   },
       //   auth:{
       //     username: 'Dinah',
       //     password: '123456'
       //   }
       // }).then(
-  
+
       // ).catch(){
-  
+
       // }
       // setLoginState(result.data);
       // console.log(result.data)
@@ -93,44 +94,44 @@ export const LoginPage = (args: {}) => {
       //   memberName: loginValues.memberName,
       //   pin: loginValues.pin
       // }
-      
-        axios({
-              method: 'post',
-              url: "https://safe101.com.au/safe101-test/api/loginApi/validate",
-              // headers: {}, 
-              data: {
-                  "j_username": formData.memberName,
-                  "j_password": formData.pin
-              },
-            }).then((res) => {      
-                  console.log('ares.data',res.data)
-                  const response = JSON.parse(res.data);
-                  if(response.status.name === 'ERR') {
-                    //Err received
-                    // Show error message
-                  } else if (response.status.name === 'SUCCESS') {
-                    // Success received
-                    // Go to next fomr
-                    // if login is success then if block of 62 line fall here
-                    if (loginState === LoginState.None) {
-                      setLoginState(LoginState.LoggingIn);
-                      setTimeout(() => {
-                        setLoginState(LoginState.None);
-                        appState.setLoggedInUser(loginValues);
-                      }, 1500);
-                    }
-                  }
-  
-                  // this.setState({ initData: res.data })
-                  // console.log('this.state.initData',this.state.initData)
-              })
-              .catch((error) => {
-                  console.error('aerror', error)
-              })
+
+      axios({
+        method: 'post',
+        url: "https://safe101.com.au/safe101-test/api/loginApi/validate",
+        // headers: {}, 
+        data: {
+          "j_username": formData.memberName,
+          "j_password": formData.pin
+        },
+      }).then((res) => {
+        console.log('ares.data', res.data)
+        const response = JSON.parse(res.data);
+        if (response.status.name === 'ERR') {
+          //Err received
+          // Show error message
+        } else if (response.status.name === 'SUCCESS') {
+          // Success received
+          // Go to next fomr
+          // if login is success then if block of 62 line fall here
+          if (loginState === LoginState.None) {
+            setLoginState(LoginState.LoggingIn);
+            setTimeout(() => {
+              setLoginState(LoginState.None);
+              appState.setLoggedInUser(loginValues);
+            }, 1500);
+          }
+        }
+
+        // this.setState({ initData: res.data })
+        // console.log('this.state.initData',this.state.initData)
+      })
+        .catch((error) => {
+          console.error('aerror', error)
+        })
     };
 
     loadusers(1)
-       
+
   }
 
 
@@ -318,7 +319,7 @@ export const LoginPage = (args: {}) => {
     var updatedForm: any = formData;
     for (var prop in updatedForm) {
       if (e.target.name === prop) {
-        console.log(prop,e.target.value)
+        console.log(prop, e.target.value)
         updatedForm[prop] = e.target.value;
       }
     }
@@ -358,17 +359,14 @@ export const LoginPage = (args: {}) => {
                         {renderLoginButton()}
                       </div>
                     </div>
-                    {/* <span>
-                      <button onClick={Test}>
-                        Click
-                      </button>
-                    </span> */}
+
                   </div>
                 ))
               }
             </div>
           </FormGroup>
         </ScrollingPage>
+     
       </div>
     </React.Fragment>
   );

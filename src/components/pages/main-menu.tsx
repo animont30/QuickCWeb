@@ -15,9 +15,11 @@ export function MainMenu(args: {}) {
   }
 
   let menuItems: NavMenuItem[] = [
-    { caption: 'Menu Wheel 2 items', contentId: 'looping-menu-2'},
-    { caption: 'Menu Wheel 8 items', contentId: 'looping-menu-8' },
-    { caption: 'Controls Demo', contentId: 'controls-example' },
+    { caption: 'About Company', contentId: 'looping-menu-2'},
+    { caption: 'Feedback this App', contentId: 'looping-menu-8' },
+    { caption: 'Privacy Policy', contentId: 'controls-example' },
+    { caption: 'Terms & Condition', contentId: 'controls-example' },
+  
   ];
 
   return (

@@ -21,11 +21,11 @@ export function WelcomePage(args: {}) {
           <img src={cImage} style={{ width: '25px' }} />
         </div>
         <div className="rotate-fade-left">
-          WORKPLAN
+          Bob
         </div>
       </div>
       <div className="safe101-welcome-subtitle" >
-        powered by
+        Powered by
       </div>
       <div style={{ width: '100%', padding: '1em', perspective: '500px', textAlign: 'center' }}>
         <img className="image-fly-in" src={bgImage} style={{ width: '80%' }} />

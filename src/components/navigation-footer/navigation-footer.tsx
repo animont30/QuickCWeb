@@ -6,7 +6,7 @@ import { pubSubService } from '../../pubsub';
 import { appState } from '../../appstate';
 import { appendFileSync } from 'fs';
 import { MobileView } from 'react-device-detect';
-
+import c from '../../images/cpeople_logo.png'
 export function NavigationFooter(args: {}) {
 
   const [safeName, setSafeName] = useState('');
@@ -69,14 +69,21 @@ export function NavigationFooter(args: {}) {
               </div>
               : null
           }
+          
         </div>
+        
         <MobileView>
           <div className="safe101-safe-area"></div>
         </MobileView>
+        
       </div>
     );
   } else {
-    return null
+    return <div className="btns">
+      <button className="btn btn-c"><img src={c} /></button>
+      &nbsp;&nbsp;
+      <button className="btn btn-back"><FaArrowLeft /></button>
+      </div> 
   }
 }
 
