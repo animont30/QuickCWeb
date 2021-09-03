@@ -4,6 +4,7 @@ import { FormGroup } from '../form-controls/form-group';
 import { FormInput, FormInputRef } from '../form-controls/form-input';
 import { NavigationFooter } from '../navigation-footer/navigation-footer';
 import { FormButton } from '../form-controls/form-button';
+import BottomButtons from '../bottom-buttons/BottomButtons'
 import './login-page.scss';
 import { FaBackward, FaArrowRight, FaSpinner, FaCheck, FaInfoCircle, FaDivide } from 'react-icons/fa';
 import { ScrollingPage } from '../form-controls/scrolling-page';
@@ -331,6 +332,7 @@ export const LoginPage = (args: {}) => {
   }
 
   return (
+
     <React.Fragment>
       <div className="LoopingNavMenu login-page" ref={menuRefCallback}>
         <ScrollingPage>
@@ -366,9 +368,14 @@ export const LoginPage = (args: {}) => {
             </div>
           </FormGroup>
         </ScrollingPage>
-     
+        <div className="app-footer" style={{margin:'10px', background:'red' }}>
+          <BottomButtons />
+        </div>
       </div>
+
     </React.Fragment>
+
+
   );
 }
 

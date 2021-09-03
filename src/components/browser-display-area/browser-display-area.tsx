@@ -8,6 +8,7 @@ import { MainMenu } from '../pages/main-menu';
 import { SafeMenu } from '../pages/safe-menu';
 import { WelcomePage } from '../welcome-page/welcome-page';
 import bgImage from '../../images/101_bg-dark.png'
+import {AfterLoginMainM} from '../pages/after-login-menu';
 
 let menuItems2: NavMenuItem[] = [
   { caption: 'A. First Item', contentId: '' },
@@ -53,7 +54,7 @@ export function BrowserDisplayArea() {
       if (pane.contentId === 'welcome') {
         paneContent = <WelcomePage />
       } else if (pane.contentId === 'login') {
-        paneContent = <LoginPage />
+        paneContent = <LoginPage /> 
       } else if (pane.contentId === 'safe-menu') {
         paneContent = <SafeMenu />
       } else if (pane.contentId === 'looping-menu-2') {
@@ -64,7 +65,11 @@ export function BrowserDisplayArea() {
         paneContent = <MainMenu />
       } else if (pane.contentId === 'controls-example') {
         paneContent = <ControlsDemoPage />
-      } else {
+      } else if (pane.contentId === 'after-login-menu'){
+        paneContent = <AfterLoginMainM />
+      }
+      
+      else {
         paneContent = <div>pane {pane.paneId} {pane.contentId} index {index}</div>
       }
 

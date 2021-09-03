@@ -24,7 +24,7 @@ export function WelcomePage(args: {}) {
           Bob
         </div>
       </div>
-      <div className="safe101-welcome-subtitle" >
+      <div className="safe101-welcome-subtitle">
         Powered by
       </div>
       <div style={{ width: '100%', padding: '1em', perspective: '500px', textAlign: 'center' }}>

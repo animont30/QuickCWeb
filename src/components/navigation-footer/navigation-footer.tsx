@@ -1,12 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { Component, useCallback, useEffect, useState } from 'react';
 import './navigation-footer.scss';
-
 import { FaBackward, FaArrowLeft } from 'react-icons/fa';
 import { pubSubService } from '../../pubsub';
 import { appState } from '../../appstate';
 import { appendFileSync } from 'fs';
 import { MobileView } from 'react-device-detect';
+import BottomButtons from '../bottom-buttons/BottomButtons';
 import c from '../../images/cpeople_logo.png'
+import { LoginPage } from '../login-page/login-page';
 export function NavigationFooter(args: {}) {
 
   const [safeName, setSafeName] = useState('');
@@ -27,7 +28,6 @@ export function NavigationFooter(args: {}) {
       sethasBackNavigationAvailable(false);
     }
   }
-
 
   useEffect(() => {
 
@@ -69,21 +69,21 @@ export function NavigationFooter(args: {}) {
               </div>
               : null
           }
-          
+
         </div>
-        
+
         <MobileView>
           <div className="safe101-safe-area"></div>
         </MobileView>
-        
+
       </div>
     );
-  } else {
-    return <div className="btns">
-      <button className="btn btn-c"><img src={c} /></button>
-      &nbsp;&nbsp;
-      <button className="btn btn-back"><FaArrowLeft /></button>
-      </div> 
+  }  
+  // else if (pane.contentId === 'login'){
+
+  // }
+  else {
+    return null
   }
 }
 

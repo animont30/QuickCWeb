@@ -23,7 +23,7 @@ class AppState {
         if (user && user.safeName) {
             this.isLoggedIn = false;
             this.loggedInUser = user;
-            this.navigation.setStack([{ paneId: this.navigation.nextPaneId(), contentId: 'main-menu', contentPage: false }]);
+            this.navigation.setStack([{ paneId: this.navigation.nextPaneId(), contentId: 'after-login-menu', contentPage: false }]);
         } else {
             this.loggedInUser = { safeName: '', memberName: '' };
             this.isLoggedIn = false;
