@@ -29,9 +29,9 @@ function App() {
               {/* wheel is here */}
               <SlidingNavigationArea ></SlidingNavigationArea>
             </div>
-            {/* <div className="app-footer" style={{ position: 'absolute', bottom: 2, left: 0, width: '19.6%' }}>
-              <NavigationFooter></NavigationFooter>
-            </div> */}
+            <div className="app-footer" style={{ position: 'absolute', bottom: 2, left: 0, width: '19.6%' }}>
+              <NavigationFooter />
+            </div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', width: '100%'}}>
             <BrowserDisplayArea></BrowserDisplayArea>

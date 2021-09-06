@@ -2,7 +2,7 @@ import React from 'react'
 import { FaArrowLeft } from 'react-icons/fa';
 import c from '../../images/cpeople_logo.png'
 
-function BottomButtons() {
+function BottomButtons(props:any) {
     return (
         <div>
             <div className="btns">

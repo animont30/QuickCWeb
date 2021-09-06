@@ -19,7 +19,6 @@ export function MainMenu(args: {}) {
     { caption: 'Feedback this App', contentId: 'looping-menu-8' },
     { caption: 'Privacy Policy', contentId: 'controls-example' },
     { caption: 'Terms & Condition', contentId: 'controls-example' },
-  
   ];
 
   return (

@@ -30,7 +30,6 @@ export function NavigationFooter(args: {}) {
   }
 
   useEffect(() => {
-
     const subscription = pubSubService.notifications().subscribe((value) => {
       if (value.id === 'navigate' && value.to === 'login') {
         sethasBackNavigationAvailable(false);
@@ -65,8 +64,8 @@ export function NavigationFooter(args: {}) {
           {
             hasBackNavigationAvailable
               ? <div>
-                <FaArrowLeft size="2em" />
-              </div>
+                  <FaArrowLeft size="2em" />
+                </div>
               : null
           }
 

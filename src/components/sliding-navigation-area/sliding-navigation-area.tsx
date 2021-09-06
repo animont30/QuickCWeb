@@ -10,6 +10,8 @@ import { MainMenu } from '../pages/main-menu';
 import { SafeMenu } from '../pages/safe-menu';
 import { WelcomePage } from '../welcome-page/welcome-page';
 import './sliding-navigation-area.scss';
+import {AfterLoginMainM} from '../pages/after-login-menu';
+import BottomButtons from '../bottom-buttons/BottomButtons';
 
 
 let menuItems2: NavMenuItem[] = [
@@ -115,15 +117,21 @@ export function SlidingNavigationArea(args: {}) {
         all[i].style.height = '80vh';
       }
       paneContent = <ControlsDemoPage />
-    } else {
+    } else if (pane.contentId === 'after-login-menu') {
+      for (var i = 0; i < all.length; i++) {
+        all[i].style.overflow = 'hidden';
+        all[i].style.height = '80vh';
+      }
+      paneContent = <AfterLoginMainM />
+    } 
+    
+    else {
       for (var i = 0; i < all.length; i++) {
         all[i].style.overflow = 'hidden';
         all[i].style.height = '80vh';
       }
       paneContent = <div>pane {pane.paneId} {pane.contentId} index {index}</div>
     }
-      
-
     return <div key={pane.paneId} className="sliding-nav-pane"
       style={{ gridRow: 1, gridColumn: 1 + index }}
     >
@@ -134,7 +142,6 @@ export function SlidingNavigationArea(args: {}) {
 
   function renderPanes() {
     return panes.map((pane, index) => renderPane(pane, index));
-
   }
 
 

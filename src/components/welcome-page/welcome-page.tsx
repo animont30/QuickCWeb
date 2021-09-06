@@ -13,7 +13,7 @@ export function WelcomePage(args: {}) {
   function loginClick() {
     pubSubService.emit({ id: 'navigate', to: 'login', contentPage: false });
   }
-
+  
   return (
     <div className="safe101-page-welcome">
       <div className="safe101-welcome-title">

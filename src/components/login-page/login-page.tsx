@@ -105,7 +105,6 @@ export const LoginPage = (args: {}) => {
           "j_password": formData.pin
         },
       }).then((res) => {
-        console.log('ares.data', res.data)
         const response = JSON.parse(res.data);
         if (response.status.name === 'ERR') {
           //Err received
@@ -114,6 +113,8 @@ export const LoginPage = (args: {}) => {
           // Success received
           // Go to next fomr
           // if login is success then if block of 62 line fall here
+          console.log('ares.data', res.data)
+          
           if (loginState === LoginState.None) {
             setLoginState(LoginState.LoggingIn);
             setTimeout(() => {

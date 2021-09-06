@@ -15,10 +15,18 @@ export function AfterLoginMainM(args: {}) {
   }
 
   let afterLoginMenuItmes: AfterLoginMenuItem[] = [
-    { caption: 'About Company', contentId: 'looping-menu-2'},
-    { caption: 'Feedback this App', contentId: 'looping-menu-8' },
-    { caption: 'Privacy Policy', contentId: 'controls-example' },
-    { caption: 'Terms & Condition', contentId: 'controls-example' },  
+    { caption: 'Favorite Group1', contentId: 'looping-menu-2'},
+    { caption: 'cBoBs', contentId: 'welcome' },
+    { caption: 'cChats', contentId: 'looping-menu-2' },
+    { caption: 'cTexts', contentId: 'looping-menu-2' },  
+    { caption: 'cDocuments', contentId: 'looping-menu-2' },
+    { caption: 'cPhotos', contentId: 'looping-menu-2' },
+    { caption: 'cVideos', contentId: 'looping-menu-2' },
+    { caption: 'cAudios', contentId: 'looping-menu-2' }, 
+    { caption: 'cLinks', contentId: 'looping-menu-2' }, 
+    { caption: 'cBoB Groups', contentId: 'looping-menu-2' },
+    { caption: 'cRecycle Bin', contentId: 'looping-menu-2' },
+    { caption: 'QUICKc Logo', contentId: 'looping-menu-2' },
   ];
 
   return (
