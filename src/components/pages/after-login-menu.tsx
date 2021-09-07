@@ -16,7 +16,7 @@ export function AfterLoginMainM(args: {}) {
 
   let afterLoginMenuItmes: AfterLoginMenuItem[] = [
     { caption: 'Favorite Group1', contentId: 'looping-menu-2'},
-    { caption: 'cBoBs', contentId: 'welcome' },
+    { caption: 'cBoBs', contentId: 'looping-menu-2' },
     { caption: 'cChats', contentId: 'looping-menu-2' },
     { caption: 'cTexts', contentId: 'looping-menu-2' },  
     { caption: 'cDocuments', contentId: 'looping-menu-2' },

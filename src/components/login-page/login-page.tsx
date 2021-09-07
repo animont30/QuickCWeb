@@ -164,7 +164,6 @@ export const LoginPage = (args: {}) => {
   }, []);
 
   useEffect(() => {
-
     $('.app-main-area').css('height', '90vh');
     // if we have a menu node, set up some event handlers to look for scrolling and animation
     menuNode?.addEventListener('scroll', scrollEventHandler, false)

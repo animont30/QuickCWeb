@@ -12,6 +12,7 @@ import { WelcomePage } from '../welcome-page/welcome-page';
 import './sliding-navigation-area.scss';
 import {AfterLoginMainM} from '../pages/after-login-menu';
 import BottomButtons from '../bottom-buttons/BottomButtons';
+import { CSettingMenu } from '../pages/c-setting';
 
 
 let menuItems2: NavMenuItem[] = [
@@ -123,6 +124,12 @@ export function SlidingNavigationArea(args: {}) {
         all[i].style.height = '80vh';
       }
       paneContent = <AfterLoginMainM />
+    } else if (pane.contentId === 'c-setting-menu') {
+      for (var i = 0; i < all.length; i++) {
+        all[i].style.overflow = 'hidden';
+        all[i].style.height = '80vh';
+      }
+      paneContent = <CSettingMenu />
     } 
     
     else {

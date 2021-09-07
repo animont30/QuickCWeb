@@ -9,6 +9,7 @@ import { SafeMenu } from '../pages/safe-menu';
 import { WelcomePage } from '../welcome-page/welcome-page';
 import bgImage from '../../images/101_bg-dark.png'
 import {AfterLoginMainM} from '../pages/after-login-menu';
+import {CSettingMenu} from '../pages/c-setting'
 
 let menuItems2: NavMenuItem[] = [
   { caption: 'A. First Item', contentId: '' },
@@ -25,6 +26,18 @@ let menuItems6: NavMenuItem[] = [
   { caption: 'G. Seventh', contentId: '' },
   { caption: 'H. Eighth Item', contentId: '' },
 ];
+
+let menuItems3: NavMenuItem[] = [
+  { caption: 'CMyBob', contentId: '' },
+  { caption: 'Image', contentId: '' },
+  { caption: 'User Name', contentId: '' },
+  { caption: 'cSetting', contentId: '' },
+  { caption: 'SAFE Change', contentId: '' },
+  { caption: 'cAPP Change', contentId: '' },
+  { caption: 'cMyLIBRARY', contentId: '' },
+  { caption: 'cSAFE Logo', contentId: '' },
+];
+
 export function BrowserDisplayArea() {
 
   const [contentId, setContentId] = useState('');
@@ -67,8 +80,12 @@ export function BrowserDisplayArea() {
         paneContent = <ControlsDemoPage />
       } else if (pane.contentId === 'after-login-menu'){
         paneContent = <AfterLoginMainM />
+      }else if (pane.contentId === 'after-login-menu'){
+        paneContent = <LoopingNavMenu items={menuItems3}/>
+      }else if (pane.contentId === 'c-setting-menu'){
+        paneContent = <CSettingMenu />
       }
-      
+      // 
       else {
         paneContent = <div>pane {pane.paneId} {pane.contentId} index {index}</div>
       }

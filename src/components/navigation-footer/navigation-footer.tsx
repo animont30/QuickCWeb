@@ -68,9 +68,7 @@ export function NavigationFooter(args: {}) {
                 </div>
               : null
           }
-
         </div>
-
         <MobileView>
           <div className="safe101-safe-area"></div>
         </MobileView>
@@ -78,9 +76,8 @@ export function NavigationFooter(args: {}) {
       </div>
     );
   }  
-  // else if (pane.contentId === 'login'){
-
-  // }
+ 
+  
   else {
     return null
   }
