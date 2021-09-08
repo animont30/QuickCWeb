@@ -1,15 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { appState } from '../../appstate';
 import { pubSubService } from '../../pubsub';
-import './looping-nav-menu.scss';
+import './c-setting-menu.scss';
 
 
-export interface NavMenuItem {
-  caption: string;                                         
+export interface CSettingMenuItem {
+  caption: string;
   contentId: string;
 }
-
-
 
 function navigateTo(destination: string) {
   if (destination === 'logout') {
@@ -19,7 +17,7 @@ function navigateTo(destination: string) {
   }
 }
 
-function navMenuItems(keyPrefix: string, items: NavMenuItem[]) {
+function CSettingMenuItem(keyPrefix: string, items: CSettingMenuItem[]) {
   return items.map((item, index) => (
     <div className="NavMenuItemOuter" key={`${keyPrefix}-${index}`}>
       <div className="NavMenuItem" onClick={() => navigateTo(item.contentId)}>
@@ -36,7 +34,7 @@ interface Panel {
 
 }
 
-export function LoopingNavMenu(args: { items: NavMenuItem[] }) {
+export function CSettingMenu(args: { items: CSettingMenuItem[] }) {
 
   let [panels, setPanels] = useState([
     {},
@@ -210,7 +208,7 @@ export function LoopingNavMenu(args: { items: NavMenuItem[] }) {
         {
           panels.map((panel, index) => (
             <div className="NavMenuGroup" key={`panel-${index}`}>
-              {navMenuItems(`panel-${index}`, args.items)}
+              {CSettingMenuItem(`panel-${index}`, args.items)}
             </div>
           ))
         }
@@ -218,4 +216,3 @@ export function LoopingNavMenu(args: { items: NavMenuItem[] }) {
     </div>
   );
 }
-

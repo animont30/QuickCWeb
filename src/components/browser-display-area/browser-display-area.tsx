@@ -9,7 +9,7 @@ import { SafeMenu } from '../pages/safe-menu';
 import { WelcomePage } from '../welcome-page/welcome-page';
 import bgImage from '../../images/101_bg-dark.png'
 import {AfterLoginMainM} from '../pages/after-login-menu';
-import {CSettingMenu} from '../pages/c-setting'
+import {CSettingMenuM} from '../pages/c-setting'
 
 let menuItems2: NavMenuItem[] = [
   { caption: 'A. First Item', contentId: '' },
@@ -83,7 +83,7 @@ export function BrowserDisplayArea() {
       }else if (pane.contentId === 'after-login-menu'){
         paneContent = <LoopingNavMenu items={menuItems3}/>
       }else if (pane.contentId === 'c-setting-menu'){
-        paneContent = <CSettingMenu />
+        paneContent = <CSettingMenuM />
       }
       // 
       else {

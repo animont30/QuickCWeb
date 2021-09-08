@@ -9,8 +9,6 @@ export interface AfterLoginMenuItem {
   contentId: string;
 }
 
-
-
 function navigateTo(destination: string) {
   if (destination === 'logout') {
     appState.setLoggedInUser(null);

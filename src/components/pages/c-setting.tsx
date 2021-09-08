@@ -1,13 +1,13 @@
 import React from 'react';
 import { appState } from '../../appstate';
 import { pubSubService } from '../../pubsub';
-import { LoopingNavMenu, NavMenuItem } from '../looping-nav-menu/looping-nav-menu';
+import { CSettingMenu, CSettingMenuItem } from '../c-setting-menu/c-setting-menu';
 
-export function CSettingMenu(args: {}) {
+export function CSettingMenuM(args: {}) {
     function navigateTo(destination: string) {
         pubSubService.emit({ id: 'navigate', to: destination, contentPage: true });
       }
-  let menuItems: NavMenuItem[] = [
+  let csettingmenuItems: CSettingMenuItem[] = [
     { caption: 'Permission', contentId: '' },
     { caption: 'Notification', contentId: '' },
     { caption: 'User Name', contentId: '' },
@@ -18,6 +18,6 @@ export function CSettingMenu(args: {}) {
     { caption: 'cSAFE Logo', contentId: '' },
   ];
   return (
-    <LoopingNavMenu items={menuItems} />
+    <CSettingMenu items={csettingmenuItems} />
   );
 }
